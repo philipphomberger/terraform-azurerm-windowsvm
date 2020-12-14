@@ -1,6 +1,8 @@
 This is a Terraform Module for create one or multiple Windows VM's in Azure. With working WINRM. So you can start using Ansible or Powershell to configurate your VM. :) 
 
-Use Module: 
+## Usage
+
+```hcl
 module "terraform-windows" {
     source = https://github.com/philipphomberger/terraform-windows
     username = "Administrator"
@@ -9,3 +11,4 @@ module "terraform-windows" {
     anzahl   = "2"
     vm_name  = "testwindows"
 }
+```
