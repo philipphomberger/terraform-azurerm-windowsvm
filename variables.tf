@@ -1,5 +1,5 @@
 variable "location" {
-  default = "West Europe"
+  default = "West US 2"
 }
 
 variable "username" {
@@ -20,7 +20,7 @@ variable "azurerm_network_interface_name" {
 
 variable "anzahl" {
   type    = number
-  default = "2"
+  default = "1"
 }
 
 variable "vm_name" {

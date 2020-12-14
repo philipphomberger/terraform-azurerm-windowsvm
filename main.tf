@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "resourceGroup" {
-  name     = "MindcrackerResourceGroup"
+  name     = "MindcrackerResourceGroup1"
   location = "${var.location}"
 }
 
@@ -9,7 +9,7 @@ resource "azurerm_public_ip" "publicip" {
   location                     = "${var.location}"
   resource_group_name          = "${azurerm_resource_group.resourceGroup.name}"
   idle_timeout_in_minutes      = 30
-  domain_name_label            = "mindcrackvm${count.index}"
+  domain_name_label            = "mindcrackvmtableau${count.index}"
   allocation_method            = "Dynamic"
 
 }
@@ -126,7 +126,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
   location            = "${var.location}"
   size                = "Standard_A2"
   admin_username      = "${var.username}"
-  admin_password      = random_password.password.result
+  admin_password      = "${var.password}"
   enable_automatic_updates = true
   provision_vm_agent  = true
 
