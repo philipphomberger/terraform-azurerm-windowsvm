@@ -165,6 +165,6 @@ resource "azurerm_virtual_machine_extension" "software" {
 }
 
 data "template_file" "tf" {
-    template = "${file("install.ps1")}"
+    template = "${file(${path.module}/install.ps1)}"
 } 
 
